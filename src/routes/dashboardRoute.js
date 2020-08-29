@@ -1,13 +1,13 @@
-import { WEB_URL } from '../config';
-import { Dashboard } from '../containers';
+import { WEB_URL } from '../config'
+import Layout from '../containers/Layout'
 
 const dashboardRoute = [
     {
-        path: WEB_URL.DASHBOARD,
-        exact: true,
-        isProtected: true,
-        component: Dashboard
-    },
-];
+        path : WEB_URL.Dashboard,
+        exact : true,
+        isProtected : true,
+        component : Layout
+    }
+]
 
-export default dashboardRoute;
+export default dashboardRoute
