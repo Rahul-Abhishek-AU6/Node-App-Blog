@@ -1,15 +1,25 @@
-import Post from "../models/userModel";
+import Post from "../models/postModel";
+import User from "../models/userModel";
 
 const services = {};
 
 //==========================================Create Service==========================================
-services.create = (data) =>
+services.create = (req) =>
   new Promise(async (res, rej) => {
     try {
-      const post = await new Post({
-        data,
-      }).save();
+      //   const data = req.body;
+      const id = req._id;
+      const obj = {
+        author: req.body.author,
+        description: req.body.description,
+        title: req.body.title,
+        user: id,
+      };
+      const post = await new Post({ ...obj }).save();
 
+      const user = await User.findById(id);
+      user.post.push(post);
+      await user.save();
       res({
         post,
       });
@@ -23,7 +33,7 @@ services.create = (data) =>
 services.getPost = (_id) =>
   new Promise(async (res, rej) => {
     try {
-      const post = await Post.findById(_id);
+      const post = await User.findById(_id);
 
       res(post);
     } catch (e) {
@@ -33,10 +43,12 @@ services.getPost = (_id) =>
   });
 
 //==========================================Update Post Service==========================================
-services.updatePost = (_id, data) =>
+services.updatePost = (req) =>
   new Promise(async (res, rej) => {
     try {
-      const post = await User.findByIdAndUpdate(_id, data, {
+      const { id } = req.params;
+      const data = req.body;
+      const post = await Post.findByIdAndUpdate(id, data, {
         new: true,
       });
 
@@ -48,10 +60,11 @@ services.updatePost = (_id, data) =>
   });
 
 //==========================================Delete Post Service==========================================
-services.delete = (_id) =>
+services.delete = (req) =>
   new Promise(async (res, rej) => {
     try {
-      await User.deleteOne(_id);
+      const { id } = req.params;
+      const post = await Post.findByIdAndDelete(id);
 
       res("deleted Successfully");
     } catch (e) {
@@ -64,7 +77,7 @@ services.delete = (_id) =>
 services.getAll = (_id, data) =>
   new Promise(async (res, rej) => {
     try {
-      const post = await User.find();
+      const post = await Post.find();
 
       res(post);
     } catch (e) {

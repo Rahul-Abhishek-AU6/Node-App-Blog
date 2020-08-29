@@ -1,7 +1,6 @@
-import Post from "../models/userModel";
+import Post from "../models/postModel";
 import service from "../services/postService";
 import { handleErrors } from "../errorHandlers/ErrorHandlers";
-import logout from "../services/logoutService";
 
 const controller = {};
 
@@ -9,7 +8,7 @@ const controller = {};
 controller.create = async (req, res) => {
   try {
     //Create new post
-    const post = await service.create(req.body);
+    const post = await service.create(req);
 
     res.status(201).json(post);
   } catch (e) {
@@ -32,7 +31,7 @@ controller.get = async (req, res) => {
 //UPDATE Post
 controller.update = async (req, res) => {
   try {
-    const post = await service.updatePost(req._id, req.body);
+    const post = await service.updatePost(req);
 
     res.status(201).json(post);
   } catch (e) {
@@ -43,7 +42,7 @@ controller.update = async (req, res) => {
 //Delete Post
 controller.delete = async (req, res) => {
   try {
-    const message = await service.delete(req._id, req);
+    const message = await service.delete(req);
 
     res.status(200).json(message);
   } catch (e) {

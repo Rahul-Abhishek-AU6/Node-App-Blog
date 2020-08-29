@@ -31,4 +31,12 @@ const userModel = new Schema({
   },
 });
 
+userModel.pre(/^find/, function (next) {
+  this.populate({
+    path: "post",
+    select: "-__v",
+  });
+  next();
+});
+
 export default new model("user", userModel);

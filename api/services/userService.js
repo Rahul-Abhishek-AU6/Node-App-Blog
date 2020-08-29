@@ -93,7 +93,6 @@ services.updateUser = (_id, data) =>
           password: hash,
           ...remData,
         },
-        { isLoggedIn: true },
         {
           new: true,
         }

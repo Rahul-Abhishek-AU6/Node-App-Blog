@@ -11,12 +11,12 @@ router.post("/create", authorize, controller.create);
 router.get("/", authorize, controller.get);
 
 //UPDATE Post
-router.patch("/update", authorize, controller.update);
+router.patch("/:id", authorize, controller.update);
 
 //Delete Post
-router.delete("/delete", authorize, controller.delete);
+router.delete("/:id", authorize, controller.delete);
 
 //Get ALl Post
-router.get("getAll", controller.getAll);
+router.get("/getAll", controller.getAll);
 
 export default router;

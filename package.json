@@ -8,7 +8,7 @@
     "start": "npm run build && node dist/server",
     "build": "rimraf dist/ && babel api/ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files"
   },
-  "author": "SAHIL",
+  "author": "Rahul-Abhishek",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",

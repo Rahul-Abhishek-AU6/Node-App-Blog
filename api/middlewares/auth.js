@@ -23,7 +23,7 @@ export default async (req, res, next) => {
         _id: req._id,
         isLoggedIn: true,
       });
-      console.log(isLoggedIn);
+      // console.log(isLoggedIn);
 
       if (!isLoggedIn) throw new Error(401, "Invalid Token");
 

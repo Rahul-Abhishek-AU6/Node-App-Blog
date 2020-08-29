@@ -1,5 +1,2 @@
 /node_modules
-/config/config.env
-
-/client/node_modules
-
+/package-lock.json
