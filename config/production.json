@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://HMS_Rahul:AttainU123@cluster0-sjhiu.mongodb.net/TestAUG?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken"
+}
