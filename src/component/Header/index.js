@@ -43,7 +43,7 @@ const Header = ({ userAuth }) => {
             variant='h6'
             className={classes.title}
           >
-            Aug Test By Rahul Abhishek API: https://social-api-rahul.herokuapp.com/
+            By Rahul Abhishek | Api: https://social-api-rahul.herokuapp.com
           </Typography>
 
           <div>
