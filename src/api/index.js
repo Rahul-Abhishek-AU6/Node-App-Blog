@@ -1,6 +1,6 @@
 import Axios from "axios";
 
-const API_BASE = "https://august-test-praveen-nagaraj.herokuapp.com";
+const API_BASE = "https://social-api-rahul.herokuapp.com";
 
 // Endpoints
 
