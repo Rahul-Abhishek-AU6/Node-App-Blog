@@ -39,7 +39,7 @@ export default class SignUp extends Component {
     try {
       let res_data = await httpRequest({
         method: "POST",
-        url: "http://localhost:5000/signup",
+        url: "https://nodeapp-blog.herokuapp.com/signup",
         data: formData,
       });
       console.log("response data --> ", res_data.data.msg);

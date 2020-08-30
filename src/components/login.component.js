@@ -39,7 +39,7 @@ class Login extends Component {
     try {
       let user = await httpRequest({
         method: "POST",
-        url: "http://localhost:5000/login",
+        url: "https://nodeapp-blog.herokuapp.com/login",
         data: formData,
       });
       if (user.data.error) {

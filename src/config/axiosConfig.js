@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosDefaultConfig = {
-  baseUrl: "https://localhost:5000/",
+  baseUrl: "https://nodeapp-blog.herokuapp.com/",
   headers: {
     "X-Requested-With": "XMLHttpRequest",
     Accept: "application/json",
