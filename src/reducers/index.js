@@ -1,11 +1,8 @@
 import { combineReducers } from "redux";
-
-import postReducers from "./postReducers";
-import { reducer as reduxFormReducer } from "redux-form";
-import userReducer from "./userReducer";
+import loginReducer from "./loginReducer";
+import postReducer from "./postReducer";
 
 export default combineReducers({
-  postsList: postReducers,
-  form: reduxFormReducer,
-  userAuth: userReducer,
+  login_data: loginReducer,
+  posts: postReducer,
 });
